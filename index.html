@@ -23,27 +23,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Small critical CSS -->
+  <!-- Inline critical: small -->
   <style>
     :root{
-      --dark-blue:#211C84; --oxford:#4D55CC; --orange:#FCA311; --platinum:#E5E5E5; --white:#FFFFFF;
-      --max-width:1100px; --radius:12px; --gap:16px;
-      --text-lg:1rem; --text-md:0.95rem; --text-sm:0.88rem;
+      --dark-blue:#1B1F3B; /* header / hero bg */
+      --oxford:#4D55CC;    /* accent */
+      --orange:#FCA311;    /* CTA */
+      --platinum:#F5F7FA;  /* page bg */
+      --white:#FFFFFF;
+      --text-dark:#0B0E20;  /* main text */
+      --text-muted:#555B6E; /* secondary */
+      --max-width:1100px; --radius:12px; --gap:16px; --shadow:0 10px 25px rgba(0,0,0,0.06);
     }
-    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#fff;color:#111}
-    .container{max-width:var(--max-width);margin:0 auto;padding:18px;}
-    header{background:linear-gradient(90deg,var(--dark-blue),var(--oxford));color:var(--white);position:sticky;top:0;z-index:80}
-    .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;padding:28px 16px}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--platinum);color:var(--text-dark)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:18px}
+    header{background:var(--dark-blue);color:var(--white);position:sticky;top:0;z-index:90}
+    .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;padding:26px 16px}
     .hero h1{font-size:1.35rem;margin:0;line-height:1.06;color:var(--white)}
-    .hero p{margin:8px 0 0;color:rgba(255,255,255,0.95);font-size:var(--text-md)}
-    .cta-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .cta-row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
     .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700;font-size:0.95rem}
-    .btn-primary{background:var(--orange);color:var(--dark-blue)}
+    .btn-primary{background:var(--orange);color:var(--white)}
     .btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.18)}
     @media(min-width:720px){
       .hero{grid-template-columns:1fr 420px;padding:44px}
       .hero h1{font-size:2rem}
-      :root{--text-lg:1.05rem;--text-md:1rem}
     }
   </style>
 
@@ -54,7 +57,7 @@
     <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
       <a href="#" class="brand" style="color:var(--white);text-decoration:none;font-weight:700;">ChartPatterns</a>
       <nav style="display:flex;gap:10px;align-items:center;">
-        <!-- REPLACE PAYMENT PAGE URL BELOW -->
+        <!-- REPLACE PAYMENT PAGE URL BELOW with your Razorpay Payment Page URL -->
         <a id="payment-page-top" class="btn btn-outline" href="<!-- REPLACE_WITH_PAYMENT_PAGE_URL -->">Buy Now — ₹199</a>
       </nav>
     </div>
@@ -78,7 +81,7 @@
           <a href="assets/sample.pdf" class="btn btn-outline" download>Download Free Sample</a>
         </div>
 
-        <p style="margin-top:12px;color:rgba(255,255,255,0.95);font-size:0.95rem;"><strong>30-day Money-Back Guarantee</strong> · Secure checkout via Razorpay Payment Page · Instant download after payment.</p>
+        <p style="margin-top:12px;color:rgba(255,255,255,0.9);font-size:0.95rem;"><strong>30-day Money-Back Guarantee</strong> · Secure checkout via Razorpay Payment Page · Instant download after payment.</p>
       </div>
 
       <div style="display:flex;justify-content:center;">
@@ -90,18 +93,17 @@
     <section class="container" id="features" aria-labelledby="features-title">
       <h2 id="features-title">Key Benefits</h2>
       <div class="features-grid">
-        <!-- Feature items (kept concise) -->
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18v2H3zM6 11l3-5 4 7 3-4 3 7H6z"/></svg><h3>Spot Reversals</h3><p>Recognize high-probability reversal patterns early.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 8H8l4-8zM4 22h16v-2H4v2z"/></svg><h3>Entry & Exit Rules</h3><p>Concrete rules so you never guess your entries.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l1.5 4.5L18 10l-4.5 1.5L12 16l-1.5-4.5L6 10l4.5-1.5L12 4z"/></svg><h3>Risk Management</h3><p>Position sizing and stop loss guidelines included.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zM13 21h8v-10h-8v10zm0-18v6h8V3h-8z"/></svg><h3>Chart Examples</h3><p>Annotated real-market charts for each pattern.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2zM11 14h2v2h-2z"/></svg><h3>Practical Setups</h3><p>Trade-ready setups with risk:reward ratios.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2 9l10 6 10-6-10-6zm0 8l-7.5-4.5L12 5l7.5 1.5L12 11zM2 15v6l10 6 10-6v-6L12 21 2 15z"/></svg><h3>Downloadable PDF</h3><p>Instant downloadable guide & sample pages.</p></article>
-        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><h3>Support & Updates</h3><p>Lifetime updates and email support for buyers.</p></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18v2H3zM6 11l3-5 4 7 3-4 3 7H6z"/></svg><div><h3>Spot Reversals</h3><p>Recognize high-probability reversal patterns early.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 8H8l4-8zM4 22h16v-2H4v2z"/></svg><div><h3>Entry & Exit Rules</h3><p>Concrete rules so you never guess your entries.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l1.5 4.5L18 10l-4.5 1.5L12 16l-1.5-4.5L6 10l4.5-1.5L12 4z"/></svg><div><h3>Risk Management</h3><p>Position sizing and stop loss guidelines included.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zM13 21h8v-10h-8v10zm0-18v6h8V3h-8z"/></svg><div><h3>Chart Examples</h3><p>Annotated real-market charts for each pattern.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2zM11 14h2v2h-2z"/></svg><div><h3>Practical Setups</h3><p>Trade-ready setups with risk:reward ratios.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2 9l10 6 10-6-10-6zm0 8l-7.5-4.5L12 5l7.5 1.5L12 11zM2 15v6l10 6 10-6v-6L12 21 2 15z"/></svg><div><h3>Downloadable PDF</h3><p>Instant downloadable guide & sample pages.</p></div></article>
+        <article class="feature-card"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><div><h3>Support & Updates</h3><p>Lifetime updates and email support for buyers.</p></div></article>
       </div>
     </section>
 
-    <!-- PREVIEW: swipeable, dots, accessible -->
+    <!-- PREVIEW -->
     <section class="container" id="preview" aria-labelledby="preview-title">
       <h2 id="preview-title">Preview — 6 pages</h2>
 
@@ -127,7 +129,7 @@
       <p style="margin-top:10px;"><a href="assets/sample.pdf" download>Download sample PDF</a></p>
     </section>
 
-    <!-- TESTIMONIALS: responsive, mobile-first -->
+    <!-- TESTIMONIALS -->
     <section class="container" id="testimonials" aria-labelledby="testimonials-title">
       <h2 id="testimonials-title">What traders say</h2>
 
@@ -136,21 +138,11 @@
 
         <div class="ts-track-outer">
           <ul class="ts-track" id="ts-track" role="list">
-            <li class="ts-card" role="listitem">
-              <p>"This eBook changed my trading — clear rules and examples."</p><cite>Ravi K., Retail Trader</cite>
-            </li>
-            <li class="ts-card" role="listitem">
-              <p>"Practical setups, not theory. Made me more consistent."</p><cite>Priya S., NSE Trader</cite>
-            </li>
-            <li class="ts-card" role="listitem">
-              <p>"Loved the risk management chapter — saved my capital."</p><cite>Arjun P., Swing Trader</cite>
-            </li>
-            <li class="ts-card" role="listitem">
-              <p>"Simple language with real charts. Highly recommend."</p><cite>Meera D., Part-time Trader</cite>
-            </li>
-            <li class="ts-card" role="listitem">
-              <p>"Instant download and great value for ₹199."</p><cite>Siddharth R., Day Trader</cite>
-            </li>
+            <li class="ts-card" role="listitem"><p>"This eBook changed my trading — clear rules and examples."</p><cite>Ravi K., Retail Trader</cite></li>
+            <li class="ts-card" role="listitem"><p>"Practical setups, not theory. Made me more consistent."</p><cite>Priya S., NSE Trader</cite></li>
+            <li class="ts-card" role="listitem"><p>"Loved the risk management chapter — saved my capital."</p><cite>Arjun P., Swing Trader</cite></li>
+            <li class="ts-card" role="listitem"><p>"Simple language with real charts. Highly recommend."</p><cite>Meera D., Part-time Trader</cite></li>
+            <li class="ts-card" role="listitem"><p>"Instant download and great value for ₹199."</p><cite>Siddharth R., Day Trader</cite></li>
           </ul>
         </div>
 
@@ -168,25 +160,23 @@
             <span class="price-note">One-time, instant download</span>
           </div>
           <div class="ribbon">50% OFF — First 100 buyers</div>
-
           <ul class="benefits-list">
             <li>Instant PDF download</li>
             <li>30-day money-back guarantee</li>
             <li>Lifetime updates</li>
           </ul>
-
           <!-- REPLACE PAYMENT PAGE URL BELOW -->
           <a id="payment-page-pricing" class="btn btn-primary large" href="<!-- REPLACE_WITH_PAYMENT_PAGE_URL -->">Buy Now — ₹199</a>
         </div>
 
         <div class="pricing-right">
           <img src="assets/trust-seal.webp" alt="Secure payment" loading="lazy" style="max-width:120px;margin-bottom:10px;">
-          <p style="font-size:0.95rem;color:#555;">Payments processed securely via Razorpay</p>
+          <p style="font-size:0.95rem;color:var(--text-muted);">Payments processed securely via Razorpay</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ + Footer -->
+    <!-- FAQ -->
     <section class="container" id="faq" aria-labelledby="faq-title">
       <h2 id="faq-title">Frequently asked questions</h2>
       <div class="accordion" id="faq-accordion">
